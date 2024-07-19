@@ -1,0 +1,29 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-6" >
+            <a routerLink="../../proveedores" class="btn btn-sm btn-dark mb-3">Back</a>
+            <img src="http://localhost:8080/api/proveedor/uploadImage/{{proveedor.imagen}}" width="100%"/>
+            <h1 class="mt-3">{{proveedor.nombre + " " + proveedor.primerApellido + " " + proveedor.segundoApellido}}</h1> 
+            <p>{{proveedor.descripcion}}</p>
+            <p>Desde </p>
+
+        </div>
+
+        <div class="col-lg-6">
+            <h1>Ingresa tus datos</h1>
+            <form [formGroup]="formCotizacion" (submit)="cotizar()">
+
+                <input type="text" formControlName="correo" class="form-control" placeholder="Correo"/>
+                <input type="text" formControlName="telefono" class="form-control" placeholder="Teléfono"/>
+                <textarea class="form-control" formControlName="descripcion" placeholder="Descripcion"></textarea>
+                <input class="btn btn-md btn-dark mt-3" type="submit" value="Cotizar" />
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

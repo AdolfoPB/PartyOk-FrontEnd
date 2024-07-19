@@ -1,0 +1,18 @@
+.card{
+    width: 600px;
+    margin: auto;
+}
+.card-body div{
+   margin-top: 30px;
+}
+.border-primary{
+    border-color: #ff6a00 !important;
+}
+.btn-primary{
+    background-color: #ff6a00;
+    border-color: #ff6a00;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}

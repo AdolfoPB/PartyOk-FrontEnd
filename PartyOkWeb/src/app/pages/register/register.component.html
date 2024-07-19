@@ -1,0 +1,59 @@
+<div class="card border-primary text-center mt-5">
+    <div class="card-header">
+     Registrar
+    </div>
+    <div class="card-body" >
+     <form method="post" [formGroup]="formRegister" (submit)="registrar()">
+         <div class="form-group col-sm-12">
+          <input class="form-control" formControlName="correo" placeholder="Correo Electronico" type="text" name="correo" autofocus required>
+         </div>
+         <div class="form-group col-sm-12">
+            <input class="form-control" formControlName="contrasena" placeholder="Contraseña" type="text" name="password" autofocus required>
+        </div>
+         <div class="form-group col-sm-12">
+          <input class="form-control" formControlName="rut" name="rut" placeholder="Rut" type="text">
+         </div>
+         <div class="form-group col-sm-12">
+            <input class="form-control" formControlName="nombre" name="rut" placeholder="Nombre" type="text">
+           </div>
+           <div class="form-group col-sm-12">
+            <input class="form-control" formControlName="primerApellido" name="rut" placeholder="Primer Apellido" type="text">
+           </div>
+           <div class="form-group col-sm-12">
+            <input class="form-control" formControlName="segundoApellido" name="rut" placeholder="Segundo Apellido" type="text">
+           </div>
+           <div class="form-group col-sm-12">
+            <input class="form-control" formControlName="descripcion" name="rut" placeholder="Descripcion" type="text-area">
+           </div>
+           <div class="form-group col-sm-12" >
+            <select class="form-control" id="country" formControlName="categoriaSelect" >
+                <option [ngValue]="null" disabled [selected]="true"> Seleccionar Categoria </option>
+                <option *ngFor="let categoria of categorias"  [ngValue]="categoria">{{ categoria.descripcion }}</option>
+            </select>
+           </div>
+           <div class="form-group col-sm-12" >
+            <select class="form-control" id="country" formControlName="regionSelect" (change)="obtenerProvincia()">
+                <option [ngValue]="null" disabled [selected]="true"> Seleccionar Region </option>
+                <option *ngFor="let r of regiones"  [ngValue]="r">{{ r.descripcion }}</option>
+            </select>
+           </div>
+           <div class="form-group col-sm-12">
+            <select class="form-control" id="country" formControlName="provinciaSelect" (change)="obtenerComuna()">
+                <option [ngValue]="null" disabled [selected]="true"> Seleccionar Provincia </option>
+                <option *ngFor="let p of provincias" [ngValue]="p">{{ p.descripcion }}</option>
+            </select>
+           </div>
+           <div class="form-group col-sm-12">
+            <select class="form-control" id="country"  formControlName="comunaSelect" >
+                <option [ngValue]="null" disabled [selected]="true"> Seleccionar Comuna </option>
+                <option *ngFor="let c of comunas" [ngValue]="c">{{ c.nombre }}</option>
+            </select>
+           </div>
+          
+         <div class="form-group col-sm-12 buttons">
+             <input class="btn btn-lg btn-primary btn-block" placeholder="Correo Electronico" type="submit" value="Registrar" >
+             <input class="btn btn-lg btn-primary-outline btn-block" placeholder="Correo Electronico" type="button" value="Volver" >
+         </div>
+      </form>
+    </div>
+ </div>

@@ -1,0 +1,25 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+        <form [formGroup]="formCategorias"> 
+            <select class="form-control col-6" id="country" (change)="filtrar()" formControlName="categoria">
+                <option [ngValue]="null"  [selected]="true"> Seleccionar Todos </option>
+                <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{categoria.descripcion}}</option>
+            </select>
+        </form>
+        <div class="col-lg-4" *ngFor="let proveedor of proveedores">
+
+            <div class="foodbox mt-3 mb-3">
+                <img src="http://localhost:8080/api/proveedor/uploadImage/{{proveedor.imagen}}">
+                <h1>{{proveedor.nombre}}</h1>
+                <p>{{proveedor.descripcion}}</p>
+                <p>Desde 1000 | currency: 'CLP'}}</p>
+                <br/>
+                <a class="buybtn" [routerLink]="['/proveedoresdetalle', proveedor.id]">Cotizar &nbsp;<i class="bi bi-bag"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

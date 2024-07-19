@@ -1,0 +1,62 @@
+<div class="container-fluid mt-5">
+
+    <div class="row">
+        <div class="col-3 ">
+            <img src="http://localhost:8080/api/proveedor/uploadImage/{{usuario.proveedor.imagen}}">
+
+            <form [formGroup]="formUsuario">
+                <div class="mb-3 mt-3">
+                    <label  class="form-label"><b>Rut</b></label>
+                    <input class="form-control"  formControlName="rut" value="Fito">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label  class="form-label"><b>Nombre</b></label>
+                    <input class="form-control" formControlName="nombre"  value="Fito">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label class="form-label"><b>Apellido Paterno</b></label>
+                    <input class="form-control" formControlName="apellidoPaterno"  value="Fito">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label class="form-label"><b>Apellido Materno</b></label>
+                    <input class="form-control" formControlName="apellidoMaterno" value="Fito">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label class="form-label"><b>Descripcion</b></label>
+                    <input class="form-control" formControlName="descripcion" value="Fito">
+                </div>
+                <div class="mb-3 mt-3">
+                    <input class="btn btn-primary" (click)="actualizarProveedor()" type="submit" value="Guardar Cambios">
+                </div>
+                   
+            </form>
+            <div class="input-group">
+                <form method="POST" >
+                    <input (change)="seleccionarImagen($event)" type="file" class="form-control" name="archivo" aria-label="Upload">
+                    <button (click)="subirImagen()" class="btn btn-outline-secondary" type="button" >Subir</button>
+                </form>
+              </div> 
+        </div>
+        <div class="col-9">
+            <table class="table" >
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Contacto</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Fecha Limite</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cotizacion of cotizaciones">
+                    <th scope="row">{{cotizacion.id}}</th>
+                    <td>{{cotizacion.contacto}}</td>
+                    <td>{{cotizacion.descripcion}}</td>
+                    <td>2022-32-32</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+</div>
+
